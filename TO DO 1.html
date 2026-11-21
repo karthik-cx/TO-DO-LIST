@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="logo">Task<span>Flow.</span></h2>
+
+            <p class="menu-title">MENU</p>
+
+            <button class="nav-item active" data-filter="all">
+                <span>▦</span> All Tasks
+            </button>
+
+            <button class="nav-item" data-filter="pending">
+                <span>◷</span> Pending
+            </button>
+
+            <button class="nav-item" data-filter="completed">
+                <span>✓</span> Completed
+            </button>
+
+            <div class="sidebar-bottom">
+                <p>Stay focused.</p>
+                <small>One task at a time.</small>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="greeting">YOUR PERSONAL WORKSPACE</p>
+                    <h1>My Tasks</h1>
+                </div>
+
+                <div class="date" id="currentDate"></div>
+            </header>
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <p>Total Tasks</p>
+                    <h2 id="totalTasks">0</h2>
+                    <span>All your tasks</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pending</p>
+                    <h2 id="pendingTasks">0</h2>
+                    <span>Waiting to be done</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Completed</p>
+                    <h2 id="completedTasks">0</h2>
+                    <span>Tasks finished</span>
+                </div>
+
+            </section>
+
+            <!-- Progress -->
+            <section class="progress-section">
+                <div class="progress-heading">
+                    <h3>Daily Progress</h3>
+                    <span id="progressText">0% completed</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+            </section>
+
+            <!-- Task Input -->
+            <section class="task-input-section">
+                <div>
+                    <h2>Manage Your Tasks</h2>
+                    <p>Add something you want to accomplish today.</p>
+                </div>
+
+                <form id="taskForm">
+                    <input type="text" id="taskInput"
+                        placeholder="What needs to be done?" required>
+
+                    <select id="priorityInput">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+
+                    <button type="submit" id="addButton">+ Add Task</button>
+                </form>
+            </section>
+
+            <!-- Task List -->
+            <section class="tasks-section">
+
+                <div class="task-heading">
+                    <h2>My Task List</h2>
+
+                    <input type="text" id="searchInput"
+                        placeholder="Search tasks...">
+                </div>
+
+                <div id="taskList"></div>
+
+                <p id="emptyMessage">No tasks found. Add a new task!</p>
+
+            </section>
+
+            <footer>
+                TaskFlow © 2026 | Stay Productive. Stay Focused.
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
